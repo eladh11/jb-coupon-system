@@ -38,7 +38,8 @@ public class CouponExpirationDailyJob implements Runnable {
 				}
 			}
 			try {
-				Thread.sleep(24 * 60 * 60 * 1000);
+				//Sleep to 1 minute except 1 day
+				Thread.sleep(60 * 1000);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}

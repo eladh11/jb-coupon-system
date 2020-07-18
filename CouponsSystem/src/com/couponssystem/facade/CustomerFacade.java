@@ -39,15 +39,7 @@ public class CustomerFacade extends ClientFacade {
 
 	@Override
 	public boolean login(String email, String password) throws IncorrectDetailsException {
-		List<Customer> customers = customersDAO.getAllCustomers();
-		for (Customer custom : customers) {
-			if (custom.getEmail().equals(email) && custom.getPassword().equals(password)) {
-				System.out.println(email + " login Successfully!");
-				return true;
-			}
-		}
-		System.out.println("Email: " + email + " Password: " + password + " are not found.");
-		return false;
+		return this.customersDAO.isCutomerExists(email, password);
 	}
 
 	public void purchaseCoupon(Coupon coupon) throws PurchaseCouponException, IncorrectDetailsException {

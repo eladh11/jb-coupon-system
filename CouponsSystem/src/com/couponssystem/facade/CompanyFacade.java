@@ -37,15 +37,8 @@ public class CompanyFacade extends ClientFacade {
 
 	@Override
 	public boolean login(String email, String password) throws IncorrectDetailsException {
-		List<Company> companies = companiesDAO.getAllCompanies();
-		for (Company comp : companies) {
-			if (comp.getEmail().equals(email) && comp.getPassword().equals(password)) {
-				System.out.println("Company login Successfully!");
-				return true;
-			}
-		}
-		System.out.println("Email: " + email + " Password: " + password + " are not found.");
-		return false;
+		return this.companiesDAO.isCompanyExists(email, password);
+
 	}
 
 	public void addCoupon(Coupon coupon) throws IncorrectDetailsException, CouldNotAddDataToTableException {
