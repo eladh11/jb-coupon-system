@@ -26,10 +26,8 @@ import com.couponssystem.security.ClientType;
 import com.couponssystem.security.LoginManager;
 import com.johnbryce.db.ConnectionPool;
 import com.johnbryce.db.Database;
-
+// Create Data For Table
 public class GenerateData {
-
-	// Create Data For Table
 
 	final static int amount = 100;
 	final static int ElectricityPrice = 50;
